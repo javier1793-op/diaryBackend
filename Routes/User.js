@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const moment = require('moment');
 const jwt = require('jwt-simple');
-const Login = require("../Models/Login");
+const Login = require("./Models/Login");
 
 //post Register 
 router.post("/register", async (req, res) => {
