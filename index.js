@@ -16,7 +16,7 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-  res.json(dia);
+  res.json('bienvendido al servidor de diary');
 });
 app.get("*", (req, res) => {
   res.sendStatus("404");
