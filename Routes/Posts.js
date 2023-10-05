@@ -15,6 +15,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+//get params Post
+router.get("/:title", async (req, res) => {
+  try {
+    const data = await Posts.find({'title':req.params.title});
+    if (!data) {
+      throw new Error("and error occurred during fetch");
+    }
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ error: "and error occurred during fetch" });
+  }
+});
+
 //get Post by ID
 router.get("/:id", async (req, res) => {
   try {
